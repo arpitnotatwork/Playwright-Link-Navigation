@@ -19,5 +19,5 @@ All captured routes are saved into an **Excel file** with columns for HTTP Metho
 Make sure you have the following installed:
 
 ```bash
-pip install playwright openpyxl
+pip install -r requirements.txt
 playwright install
