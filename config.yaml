@@ -1,2 +1,2 @@
-base_url: ""   #  <-----------------Replace with your desired base URL
+base_url: "https://the-internet.herokuapp.com/"   #  <-----------------Replace with your desired base URL
 report_path: "reports/link_report.xlsx"

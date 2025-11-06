@@ -17,8 +17,16 @@ def base_url(config):
 def browser():
     """Launch Playwright browser"""
     with sync_playwright() as p:
-        browser = p.chromium.launch(headless=True)
-        context = browser.new_context()
+        browser = p.chromium.launch(headless=True,
+                                    args=[
+                "--disable-http2",
+                "--ignore-certificate-errors",
+                "--disable-gpu",
+                "--disable-web-security",
+                "--no-sandbox",
+                "--disable-features=IsolateOrigins,site-per-process"
+            ])
+        context = browser.new_context(ignore_https_errors=True)
         page = context.new_page()
         yield page
         browser.close()
